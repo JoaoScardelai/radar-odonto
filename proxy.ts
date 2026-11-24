@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
-  const publicPaths = ["/login", "/forgot-password", "/reset-password"];
+  const publicPaths = ["/login", "/forgot-password", "/reset-password", "/api/cron/alerts"];
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
