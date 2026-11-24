@@ -7,6 +7,7 @@ import { extractPdfFromUrl } from "./pdf";
 import { isDentistryOpportunity } from "./normalize";
 import { extractDentistryOpportunity } from "./extract";
 import { saveOpportunity } from "./database";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 import { findContexts } from "./debug";
 import { validateOpportunity } from "./validate";
 import {
@@ -242,6 +243,17 @@ async function processSource(source: RadarSource) {
 
   const documents = await source.discover();
 
+  await supabaseAdmin.from("source_health").upsert({
+    source_id: source.id,
+    source_name: source.name,
+    city: source.city,
+    state: source.state,
+    last_run_at: new Date().toISOString(),
+    last_status: "OK",
+    last_error: null,
+    documents_found: documents.length,
+  });
+
   console.log("");
   console.log(`🔭 ${documents.length} documento(s) candidato(s)`);
 
@@ -273,6 +285,17 @@ async function main() {
       console.error(`❌ Falha na fonte ${source.name}`);
 
       console.error(message);
+
+      await supabaseAdmin.from("source_health").upsert({
+        source_id: source.id,
+        source_name: source.name,
+        city: source.city,
+        state: source.state,
+        last_run_at: new Date().toISOString(),
+        last_status: "ERROR",
+        last_error: message.slice(0, 500),
+        documents_found: 0,
+      });
     }
   }
 

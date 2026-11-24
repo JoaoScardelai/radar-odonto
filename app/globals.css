@@ -172,12 +172,21 @@ a {
 }
 
 .filtersToolbar { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 15px; }
+.statusTabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.statusTabs button { border: 1px solid #dce1e6; background: white; padding: 9px 13px; border-radius: 8px; cursor: pointer; color: #47535e; }
 .filtersToolbar select, .searchInput, .filtersToolbar button, .cardActions button, .personalActions button, .personalActions a {
   border: 1px solid #dce1e6; background: white; padding: 9px 12px; border-radius: 8px; cursor: pointer; color: #47535e;
 }
 .searchInput { min-width: 280px; flex: 1; }
 .filterActive { background: #eef8f4 !important; border-color: #16815c !important; color: #147a58 !important; }
 .resultCount { color: #71808e; font-size: 14px; margin-bottom: 18px; }
+.sourceHealth { margin-top: 42px; }
+.sourceHealth h2 { margin-bottom: 14px; }
+.sourceHealthGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.sourceHealthCard { background: white; border: 1px solid #e2e6ea; border-radius: 10px; padding: 15px; display: flex; flex-direction: column; gap: 6px; }
+.sourceHealthCard small { color: #71808e; }
+.healthOk { color: #147a58; font-size: 13px; }
+.healthError { color: #b42318; font-size: 13px; }
 
 .filters button {
   background: white;
