@@ -1,4 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
+import { config } from "dotenv";
+
+// No crawler local, carrega .env.local. Em CI/Vercel, preserva as variáveis injetadas.
+config({ path: ".env.local" });
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const secret = process.env.SUPABASE_SECRET_KEY;
