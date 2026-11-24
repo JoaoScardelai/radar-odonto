@@ -7,10 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "crawler": "tsx --env-file=.env.local crawler/index.ts",
-    "discover": "tsx --env-file=.env.local crawler/discover.ts",
-    "radar": "tsx --env-file=.env.local crawler/run.ts",
-    "radar:refresh": "tsx --env-file=.env.local crawler/run.ts --reprocess"
+    "crawler": "tsx crawler/index.ts",
+    "discover": "tsx crawler/discover.ts",
+    "radar": "tsx crawler/run.ts",
+    "radar:refresh": "tsx crawler/run.ts --reprocess"
   },
   "dependencies": {
     "@supabase/server": "^1.9.2",

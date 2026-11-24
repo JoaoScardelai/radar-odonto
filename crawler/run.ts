@@ -1,3 +1,8 @@
+import { config } from "dotenv";
+
+// Local: carrega .env.local. GitHub/Vercel: mantém as variáveis já injetadas.
+config({ path: ".env.local" });
+
 import { extractPdfFromUrl } from "./pdf";
 import { isDentistryOpportunity } from "./normalize";
 import { extractDentistryOpportunity } from "./extract";
