@@ -5,4 +5,12 @@ export const monitoredCities = [
   { city: "Cambira", state: "PR" },
   { city: "Londrina", state: "PR" },
   { city: "Ponta Grossa", state: "PR" },
+  { city: "São José dos Pinhais", state: "PR" },
+  { city: "Foz do Iguaçu", state: "PR" },
+  { city: "Maringá", state: "PR" },
+  { city: "Guarapuava", state: "PR" },
+  { city: "Araucária", state: "PR" },
+  { city: "Campo Largo", state: "PR" },
+  { city: "Paranaguá", state: "PR" },
+  { city: "Umuarama", state: "PR" },
 ];

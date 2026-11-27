@@ -12,6 +12,8 @@ import { londrinaSource } from "./londrina";
 
 import { pontaGrossaSource } from "./ponta-grossa";
 
+import { additionalCitySources } from "./additional-cities";
+
 export const radarSources: RadarSource[] = [
   curitibaSource,
 
@@ -21,4 +23,6 @@ export const radarSources: RadarSource[] = [
 
   londrinaSource,
   pontaGrossaSource,
+
+  ...additionalCitySources,
 ];
